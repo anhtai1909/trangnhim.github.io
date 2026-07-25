@@ -171,12 +171,13 @@
     <div class="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-3">
       <div class="space-y-3"><h3 class="text-xl font-bold text-brand">TRANG NHÍM BEAUTY & SPA</h3><p class="text-xs leading-relaxed text-gray-400">Chuyên Filler, Botox, Cắt/Nhấn mí, Nâng cung mày, Nail & Mi. Uy tín – Chất lượng – Đặt sự hài lòng của khách hàng lên hàng đầu.</p></div>
       <div class="space-y-2"><h4 class="mb-3 text-sm font-semibold">Thông tin liên hệ</h4><p class="flex items-center text-xs text-gray-400"><i class="fa-solid fa-location-dot mr-2.5 w-4 text-center text-brand" aria-hidden="true"></i>Địa chỉ: TP. Vĩnh Yên, Vĩnh Phúc</p><p class="flex items-center text-xs text-gray-400"><i class="fa-solid fa-phone mr-2.5 w-4 text-center text-brand" aria-hidden="true"></i>Hotline: 0363 329 333</p><p class="flex items-center text-xs text-gray-400"><i class="fa-solid fa-clock mr-2.5 w-4 text-center text-brand" aria-hidden="true"></i>Giờ làm việc: 8:30 - 20:00 mỗi ngày</p></div>
-      <div class="space-y-2"><h4 class="text-sm font-semibold">Kết nối với chúng tôi</h4><div class="mt-2 flex space-x-3 text-lg"><a href="#" class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-800 transition hover:bg-brand" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a><a href="https://zalo.me/0363329333" target="_blank" rel="noopener noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-800 transition hover:bg-brand" aria-label="Zalo"><i class="fa-solid fa-comment" aria-hidden="true"></i></a></div></div>
+      <div class="space-y-2"><h4 class="text-sm font-semibold">Kết nối với chúng tôi</h4><div class="mt-2 flex space-x-3 text-lg"><a href="https://www.facebook.com/profile.php?id=61552750869834" target="_blank" rel="noopener noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-800 transition hover:bg-brand" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a><a href="https://m.me/61552750869834" target="_blank" rel="noopener noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-800 transition hover:bg-brand" aria-label="Messenger"><i class="fa-brands fa-facebook-messenger" aria-hidden="true"></i></a><a href="https://zalo.me/0363329333" target="_blank" rel="noopener noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-800 transition hover:bg-brand" aria-label="Zalo"><i class="fa-solid fa-comment" aria-hidden="true"></i></a></div></div>
     </div>
     <div class="mx-auto mt-8 max-w-7xl border-t border-gray-800 px-4 pt-6 text-center text-xs text-gray-500">© Trang Nhím Beauty & Spa. All rights reserved.</div>
   </footer>
 
   <div class="fixed bottom-4 right-4 z-50 flex flex-col space-y-3">
+    <a href="https://m.me/61552750869834" target="_blank" rel="noopener noreferrer" aria-label="Nhắn Messenger" class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg transition hover:scale-110"><i class="fa-brands fa-facebook-messenger text-xl" aria-hidden="true"></i></a>
     <a href="https://zalo.me/0363329333" target="_blank" rel="noopener noreferrer" aria-label="Nhắn Zalo" class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500 text-white shadow-lg transition hover:scale-110"><i class="fa-solid fa-comment text-xl" aria-hidden="true"></i></a>
     <a href="tel:0363329333" aria-label="Gọi 0363 329 333" class="flex h-12 w-12 animate-bounce items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition hover:scale-110"><i class="fa-solid fa-phone text-xl" aria-hidden="true"></i></a>
   </div>
@@ -184,10 +185,44 @@
   <script>
     document.getElementById('booking-form').addEventListener('submit', function (event) {
       event.preventDefault();
+
+      var name = document.getElementById('name').value.trim();
+      var phone = document.getElementById('phone').value.trim();
+      var service = document.getElementById('service').value;
+      var note = document.getElementById('note').value.trim();
+
+      var bookingText =
+        'ĐĂNG KÝ ĐẶT LỊCH - TRANG NHÍM BEAUTY & SPA\n\n' +
+        'Họ và tên: ' + name + '\n' +
+        'Số điện thoại/Zalo: ' + phone + '\n' +
+        'Dịch vụ quan tâm: ' + service + '\n' +
+        'Ghi chú/Ngày muốn đặt lịch: ' + (note || 'Không có');
+
+      function fallbackCopy(text) {
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(bookingText).catch(function () {
+          fallbackCopy(bookingText);
+        });
+      } else {
+        fallbackCopy(bookingText);
+      }
+
       var message = document.getElementById('form-message');
-      message.textContent = 'Cảm ơn bạn! Trang Nhím Spa sẽ liên hệ lại trong ít phút.';
+      message.textContent = 'Thông tin đã được sao chép. Messenger đang mở, bạn chỉ cần dán nội dung và gửi.';
       message.classList.remove('hidden');
-      this.reset();
+
+      window.open('https://m.me/61552750869834', '_blank', 'noopener,noreferrer');
     });
   </script>
 </body>
