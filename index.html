@@ -1,230 +1,300 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Trang Nhím Beauty & Spa – Filler, Botox, Cắt mí và làm đẹp chuyên nghiệp tại Vĩnh Yên.">
-  <title>Trang Nhím Beauty & Spa – Filler, Botox, Cắt mí chuyên nghiệp</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              DEFAULT: '#E87A5D',
-              dark: '#D06043',
-              light: '#FFF4F1'
-            }
-          },
-          fontFamily: {
-            sans: ['Montserrat', 'sans-serif']
-          }
-        }
-      }
-    };
-  </script>
-  <style>
-    html { scroll-behavior: smooth; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Trang Nhím Beauty & Spa – Filler, Botox, Cắt mí và làm đẹp chuyên nghiệp tại Vĩnh Yên.">
+<title>Trang Nhím Beauty & Spa – Filler, Botox, Cắt mí chuyên nghiệp</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%233A1F2B' stroke='%23D9B98A' stroke-width='2'/%3E%3Cpath d='M11 41L13 31L17 34L18 24L23 29L26 20L31 27L36 20L39 29L44 24L45 34L49 31L51 41Z' fill='%23D9B98A'/%3E%3Cellipse cx='30' cy='45' rx='20' ry='5' fill='%23F8E8E3'/%3E%3C/svg%3E">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{colors:{plum:'#3A1F2B',rose:'#C98B7A',roseD:'#A96B5B',blush:'#F8E8E3',ivory:'#FFFBF8',gold:'#D9B98A'},fontFamily:{serif:['Playfair Display','serif'],sans:['Be Vietnam Pro','sans-serif']}}}};
+</script>
+<style>
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.125em;flex-shrink:0}
+html{scroll-behavior:smooth}
+body{background:#FFFBF8}
+:focus-visible{outline:2px solid #C98B7A;outline-offset:3px}
+.grad-text{background:linear-gradient(100deg,#A96B5B,#D9B98A 50%,#C98B7A);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.arch{border-radius:999px 999px 28px 28px}
+.ring{position:absolute;inset:-18px;border:1px solid #D9B98A;border-radius:999px 999px 40px 40px;animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.03);opacity:.5}}
+.float{animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:float 9s ease-in-out infinite}
+.rise{opacity:0;transform:translateY(26px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.marquee{display:flex;width:max-content;animation:marq 30s linear infinite}
+@keyframes marq{to{transform:translateX(-50%)}}
+.card{transform-style:preserve-3d;transition:transform .25s ease,box-shadow .4s}
+.card:hover{box-shadow:0 30px 60px -20px rgba(58,31,43,.35)}
+.card img{transition:transform .9s ease}
+.card:hover img{transform:scale(1.08)}
+.card .veil{background:linear-gradient(to top,rgba(58,31,43,.88),rgba(58,31,43,0) 60%)}
+.sparkle{position:fixed;top:-20px;pointer-events:none;z-index:1;color:#D9B98A;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(260deg);opacity:0}}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .7s}
+.btn:hover::after{left:130%}
+.field{width:100%;border-bottom:1px solid #e6cfc7;background:transparent;padding:.8rem .1rem;font-size:.9rem;transition:border-color .3s}
+.field:focus{border-color:#A96B5B;outline:none}
+.hdr.scrolled{background:rgba(255,251,248,.92);backdrop-filter:blur(12px);box-shadow:0 6px 30px -14px rgba(58,31,43,.25)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.rise{opacity:1;transform:none}}
+</style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-800 antialiased">
-  <header class="sticky top-0 z-50 bg-white/95 shadow-sm backdrop-blur">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-      <a href="#top" class="flex items-center space-x-2" aria-label="Trang chủ Trang Nhím Beauty & Spa">
-        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-xl font-bold text-white shadow">T</span>
-        <span>
-          <span class="block text-lg font-bold leading-tight text-gray-900">TRANG NHÍM</span>
-          <span class="block text-xs font-medium uppercase tracking-wider text-brand">Beauty & Spa</span>
-        </span>
-      </a>
-      <nav class="hidden space-x-8 text-sm font-medium md:flex" aria-label="Điều hướng chính">
-        <a href="#about" class="transition hover:text-brand">Về chúng tôi</a>
-        <a href="#services" class="transition hover:text-brand">Dịch vụ</a>
-        <a href="#booking" class="transition hover:text-brand">Đặt lịch</a>
-      </nav>
-      <a href="tel:0363329333" class="flex items-center space-x-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-brand-dark">
-        <i class="fa-solid fa-phone" aria-hidden="true"></i>
-        <span>0363 329 333</span>
-      </a>
+<body class="font-sans text-plum antialiased">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol><symbol id="i-comment" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></symbol><symbol id="i-comment-dots" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></symbol><symbol id="i-facebook-messenger" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M13 7l-4 5h6l-4 5"/></symbol><symbol id="i-facebook-f" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/></symbol><symbol id="i-wand-magic-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></symbol><symbol id="i-spa" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.5 12 13 13 12"/></symbol><symbol id="i-shield-halved" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 5v16"/></symbol><symbol id="i-shield-heart" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 16s-3-1.8-3-3.8a1.6 1.6 0 0 1 3-.8 1.6 1.6 0 0 1 3 .8c0 2-3 3.8-3 3.8z"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol><symbol id="i-magnifying-glass-plus" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></symbol><symbol id="i-xmark" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol><symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol><symbol id="i-location-dot" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="logo" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="30" fill="#3A1F2B" stroke="#D9B98A" stroke-width="1.5"/>
+    <circle cx="32" cy="32" r="26.5" fill="none" stroke="#D9B98A" stroke-width=".5" stroke-dasharray="1.5 2.5"/>
+    <path d="M11 41L13 31L17 34L18 24L23 29L26 20L31 27L36 20L39 29L44 24L45 34L49 31L51 41Z" fill="#D9B98A"/>
+    <path d="M14 38L16 33M21 36L22 28M29 35L31 29M38 35L40 30M46 37L47 33" stroke="#3A1F2B" stroke-width="1" stroke-linecap="round"/>
+    <ellipse cx="30" cy="45" rx="20" ry="5" fill="#F8E8E3"/>
+    <path d="M47 40Q55 40 56.5 44.5Q52 47 46 46Z" fill="#F8E8E3"/>
+    <circle cx="56" cy="44" r="1.3" fill="#3A1F2B"/><circle cx="51.5" cy="42" r="1" fill="#3A1F2B"/>
+    <path d="M18 51Q32 56 46 51" fill="none" stroke="#D9B98A" stroke-width="1" stroke-linecap="round"/>
+    <path d="M47 11L48.4 15.1L52.5 16.5L48.4 17.9L47 22L45.6 17.9L41.5 16.5L45.6 15.1Z" fill="#F8E8E3"/>
+  </symbol>
+</svg>
+
+<header id="hdr" class="hdr fixed inset-x-0 top-0 z-50 transition-all duration-500">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+    <a href="#top" class="flex items-center gap-3" aria-label="Trang Nhím Beauty & Spa">
+      <svg class="h-12 w-12 transition duration-700 hover:rotate-[360deg]" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo"/></svg>
+      <span class="leading-tight"><span class="block font-serif text-lg font-semibold">Trang Nhím</span><span class="block text-[11px] text-roseD">Beauty & Spa</span></span>
+    </a>
+    <nav class="hidden gap-9 text-sm font-medium md:flex" aria-label="Điều hướng chính">
+      <a href="#about" class="hover:text-roseD">Về chúng tôi</a><a href="#services" class="hover:text-roseD">Dịch vụ</a><a href="#process" class="hover:text-roseD">Quy trình</a><a href="#booking" class="hover:text-roseD">Đặt lịch</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:0363329333" class="btn hidden items-center gap-2 rounded-full bg-plum px-5 py-2.5 text-sm font-medium text-white transition hover:bg-roseD sm:flex"><svg class="ic " aria-hidden="true"><use href="#i-phone"/></svg>0363 329 333</a>
+      <button id="menuBtn" class="flex h-10 w-10 items-center justify-center rounded-full bg-blush md:hidden" aria-label="Mở menu" aria-expanded="false"><svg class="ic " aria-hidden="true"><use href="#i-bars"/></svg></button>
     </div>
-  </header>
+  </div>
+  <nav id="mobileNav" class="hidden border-t border-blush bg-ivory px-5 py-4 text-sm md:hidden">
+    <a href="#about" class="block py-2">Về chúng tôi</a><a href="#services" class="block py-2">Dịch vụ</a><a href="#process" class="block py-2">Quy trình</a><a href="#booking" class="block py-2">Đặt lịch</a>
+  </nav>
+</header>
 
-  <main id="top">
-    <section class="relative overflow-hidden bg-brand-light py-12 md:py-20">
-      <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 md:grid-cols-2">
-        <div class="space-y-6 text-center md:text-left">
-          <span class="inline-block rounded-full bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand shadow-sm">✨ Thẩm mỹ uy tín & an toàn</span>
-          <h1 class="text-3xl font-extrabold leading-tight text-gray-900 md:text-5xl">
-            Kiến tạo vẻ đẹp<br class="hidden md:block">
-            <span class="text-brand">Hài hòa – Tự nhiên – An toàn</span>
-          </h1>
-          <p class="text-sm leading-relaxed text-gray-600 md:text-base">Luôn đặt chất lượng dịch vụ và sự hài lòng của khách hàng lên hàng đầu. Tỏa sáng phiên bản hoàn hảo nhất của chính bạn.</p>
-          <div class="flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
-            <a href="#booking" class="rounded-full bg-brand px-8 py-3.5 text-center font-bold text-white shadow-lg transition hover:bg-brand-dark hover:shadow-xl">Đặt lịch tư vấn nhanh</a>
-            <a href="https://zalo.me/0363329333" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-8 py-3.5 text-center font-bold text-gray-800 shadow-sm transition hover:bg-gray-100">
-              <i class="fa-solid fa-comment-dots text-blue-500" aria-hidden="true"></i> Nhắn Zalo
-            </a>
-          </div>
-        </div>
-        <div class="relative">
-          <div class="h-80 w-full overflow-hidden rounded-3xl border-4 border-white bg-gray-300 shadow-2xl md:h-[420px]">
-            <img src="https://w.ladicdn.com/690240aadfda14002c5c3a19/627367472_3471348363006887_6465955051056027859_n-20260724120439-woame.jpg" alt="Không gian Trang Nhím Spa" class="h-full w-full object-cover" loading="eager">
-          </div>
+<main id="top">
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-blush pb-20 pt-32 md:pt-40">
+    <div class="blob -left-24 top-10 h-80 w-80 bg-rose/50"></div>
+    <div class="blob -right-20 bottom-0 h-96 w-96 bg-gold/50" style="animation-delay:-3s"></div>
+    <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-5 md:grid-cols-[1.1fr_.9fr]">
+      <div class="text-center md:text-left">
+        <p class="rise mb-5 inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-xs font-medium text-roseD shadow-sm"><svg class="ic " aria-hidden="true"><use href="#i-spa"/></svg>Thẩm mỹ & Spa tại Vĩnh Yên</p>
+        <h1 class="rise font-serif text-4xl font-semibold leading-[1.15] md:text-6xl" style="animation-delay:.15s">Vẻ đẹp hài hòa,<br><span class="grad-text italic">tự nhiên và an toàn</span></h1>
+        <p class="rise mx-auto mt-6 max-w-lg text-[15px] leading-relaxed text-plum/70 md:mx-0" style="animation-delay:.3s">Filler, Botox, cắt mí, nâng cung mày, nail và nối mi. Mỗi khách hàng được tư vấn riêng để giữ nét đẹp vốn có của mình.</p>
+        <div class="rise mt-9 flex flex-col justify-center gap-4 sm:flex-row md:justify-start" style="animation-delay:.45s">
+          <a href="#booking" class="btn rounded-full bg-plum px-8 py-4 text-center text-sm font-medium text-white shadow-xl transition hover:bg-roseD">Đặt lịch tư vấn</a>
+          <a href="https://zalo.me/0363329333" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full border border-plum/20 bg-white/70 px-8 py-4 text-sm font-medium transition hover:bg-white"><svg class="ic text-blue-500" aria-hidden="true"><use href="#i-comment-dots"/></svg>Nhắn Zalo</a>
         </div>
       </div>
-    </section>
-
-    <section id="about" class="bg-white py-16">
-      <div class="mx-auto max-w-7xl px-4">
-        <div class="mx-auto mb-12 max-w-2xl text-center">
-          <h2 class="text-2xl font-bold text-gray-900 md:text-3xl">Tại sao khách hàng tin tưởng chúng tôi?</h2>
-          <div class="mx-auto mt-3 h-1 w-16 rounded-full bg-brand"></div>
+      <div class="rise relative mx-auto w-full max-w-sm" style="animation-delay:.3s">
+        <div class="ring"></div>
+        <div class="arch float relative h-[440px] bg-gradient-to-b from-rose/40 to-gold/40 overflow-hidden border-[6px] border-white shadow-2xl md:h-[520px]">
+          <img referrerpolicy="no-referrer" decoding="async" id="heroImg" src="https://w.ladicdn.com/690240aadfda14002c5c3a19/627367472_3471348363006887_6465955051056027859_n-20260724120439-woame.jpg" alt="Không gian Trang Nhím Spa" class="h-full w-full scale-110 object-cover">
         </div>
-        <div class="grid gap-8 md:grid-cols-3">
-          <article class="space-y-4 rounded-2xl bg-brand-light p-6 text-center">
-            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand text-2xl text-white shadow"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
-            <h3 class="text-lg font-bold text-gray-900">An toàn tuyệt đối</h3>
-            <p class="text-xs leading-relaxed text-gray-600 md:text-sm">Sử dụng sản phẩm Filler / Botox đạt chuẩn, rõ nguồn gốc xuất xứ và an toàn y tế.</p>
-          </article>
-          <article class="space-y-4 rounded-2xl bg-brand-light p-6 text-center">
-            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand text-2xl text-white shadow"><i class="fa-solid fa-user-ninja" aria-hidden="true"></i></div>
-            <h3 class="text-lg font-bold text-gray-900">Tay nghề cao</h3>
-            <p class="text-xs leading-relaxed text-gray-600 md:text-sm">Kỹ thuật tạo hình chuẩn tỉ lệ vàng, nhẹ nhàng, hạn chế tối đa sưng đau.</p>
-          </article>
-          <article class="space-y-4 rounded-2xl bg-brand-light p-6 text-center">
-            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand text-2xl text-white shadow"><i class="fa-solid fa-heart" aria-hidden="true"></i></div>
-            <h3 class="text-lg font-bold text-gray-900">Tận tâm chăm sóc</h3>
-            <p class="text-xs leading-relaxed text-gray-600 md:text-sm">Theo sát quá trình lành thương, hỗ trợ tư vấn và bảo hành chu đáo sau dịch vụ.</p>
-          </article>
+        <div class="float absolute -left-6 bottom-16 flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-xl" style="animation-delay:-2s">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-blush text-roseD"><svg class="ic " aria-hidden="true"><use href="#i-shield-heart"/></svg></span>
+          <span class="text-xs leading-snug"><b class="block text-sm">Sản phẩm rõ nguồn gốc</b>Đạt chuẩn y tế</span>
         </div>
       </div>
-    </section>
-
-    <section id="services" class="bg-gray-50 py-16">
-      <div class="mx-auto max-w-7xl px-4">
-        <div class="mx-auto mb-12 max-w-2xl text-center">
-          <h2 class="text-2xl font-bold text-gray-900 md:text-3xl">Dịch vụ nổi bật</h2>
-          <p class="mt-2 text-sm text-gray-500">Đa dạng giải pháp làm đẹp toàn diện dành cho bạn</p>
-          <div class="mx-auto mt-3 h-1 w-16 rounded-full bg-brand"></div>
-        </div>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md">
-            <div>
-              <div class="h-[380px] overflow-hidden bg-gray-100 sm:h-[420px]"><img src="https://w.ladicdn.com/690240aadfda14002c5c3a19/729939951_122234232242091695_741693309196468735_n-20260725030323--bwnl.jpg" alt="Dịch vụ Filler và Botox" class="h-full w-full object-cover object-top transition duration-300 group-hover:scale-105" loading="lazy"></div>
-              <div class="space-y-2 p-5"><h3 class="text-lg font-bold text-gray-900">Filler & Botox</h3><p class="text-xs leading-relaxed text-gray-500">Tạo hình môi baby, cằm V-line, làm đầy thái dương, xóa nhăn đuôi mắt và thon gọn hàm.</p></div>
-            </div>
-            <div class="p-5 pt-0"><a href="#booking" class="block rounded-xl bg-gray-100 py-2.5 text-center text-xs font-semibold transition hover:bg-brand hover:text-white">Đặt lịch tư vấn</a></div>
-          </article>
-          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md">
-            <div>
-              <div class="h-[380px] overflow-hidden bg-gray-100 sm:h-[420px]"><img src="https://w.ladicdn.com/690240aadfda14002c5c3a19/627328357_3471348303006893_8683797260080931585_n-20260724120707-ucwdy.jpg" alt="Dịch vụ cắt và nhấn mí" class="h-full w-full object-cover object-top transition duration-300 group-hover:scale-105" loading="lazy"></div>
-              <div class="space-y-2 p-5"><h3 class="text-lg font-bold text-gray-900">Cắt & Nhấn mí</h3><p class="text-xs leading-relaxed text-gray-500">Tạo nếp mí rõ nét, tự nhiên, khắc phục mí lót và mắt một mí nhanh chóng, an toàn.</p></div>
-            </div>
-            <div class="p-5 pt-0"><a href="#booking" class="block rounded-xl bg-gray-100 py-2.5 text-center text-xs font-semibold transition hover:bg-brand hover:text-white">Đặt lịch tư vấn</a></div>
-          </article>
-          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md">
-            <div>
-              <div class="h-[380px] overflow-hidden bg-gray-100 sm:h-[420px]"><img src="https://w.ladicdn.com/690240aadfda14002c5c3a19/627367472_3471348363006887_6465955051056027859_n-20260724120439-woame.jpg" alt="Dịch vụ nâng cung mày" class="h-full w-full object-cover object-top transition duration-300 group-hover:scale-105" loading="lazy"></div>
-              <div class="space-y-2 p-5"><h3 class="text-lg font-bold text-gray-900">Nâng cung mày</h3><p class="text-xs leading-relaxed text-gray-500">Xóa xệ vùng mắt, nâng cơ chân mày giúp đôi mắt trẻ trung, linh hoạt và rạng rỡ.</p></div>
-            </div>
-            <div class="p-5 pt-0"><a href="#booking" class="block rounded-xl bg-gray-100 py-2.5 text-center text-xs font-semibold transition hover:bg-brand hover:text-white">Đặt lịch tư vấn</a></div>
-          </article>
-          <article class="group flex flex-col justify-between overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md">
-            <div>
-              <div class="h-[380px] overflow-hidden bg-gray-100 sm:h-[420px]"><img src="https://w.ladicdn.com/690240aadfda14002c5c3a19/nail-mong-ngan-cuc-sang-20260725030010-y4kpu.jpg" alt="Dịch vụ nail và nối mi" class="h-full w-full object-cover object-top transition duration-300 group-hover:scale-105" loading="lazy"></div>
-              <div class="space-y-2 p-5"><h3 class="text-lg font-bold text-gray-900">Nail & Nối mi</h3><p class="text-xs leading-relaxed text-gray-500">Chăm sóc móng chuyên nghiệp, nối mi thiết kế mềm nhẹ, chuẩn dáng mắt.</p></div>
-            </div>
-            <div class="p-5 pt-0"><a href="#booking" class="block rounded-xl bg-gray-100 py-2.5 text-center text-xs font-semibold transition hover:bg-brand hover:text-white">Đặt lịch tư vấn</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="booking" class="bg-brand-light py-16">
-      <div class="mx-auto max-w-3xl px-4">
-        <div class="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl md:p-10">
-          <div class="mx-auto mb-8 max-w-xl text-center">
-            <h2 class="text-2xl font-bold text-gray-900 md:text-3xl">Đăng ký đặt lịch ưu đãi</h2>
-            <p class="mt-2 text-xs text-gray-500 md:text-sm">Để lại thông tin để nhận tư vấn trực tiếp từ chuyên viên Trang Nhím.</p>
-          </div>
-          <form id="booking-form" class="space-y-4">
-            <div class="grid gap-4 md:grid-cols-2">
-              <div><label for="name" class="mb-1 block text-xs font-semibold text-gray-700">Họ và tên *</label><input id="name" name="name" type="text" required placeholder="Nguyễn Văn A" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-brand focus:outline-none"></div>
-              <div><label for="phone" class="mb-1 block text-xs font-semibold text-gray-700">Số điện thoại / Zalo *</label><input id="phone" name="phone" type="tel" required placeholder="0363 329 333" class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-brand focus:outline-none"></div>
-            </div>
-            <div><label for="service" class="mb-1 block text-xs font-semibold text-gray-700">Dịch vụ quan tâm</label><select id="service" name="service" class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm focus:border-brand focus:outline-none"><option>Tiêm Filler / Botox</option><option>Cắt mí / Nhấn mí</option><option>Nâng cung mày</option><option>Làm Nail / Nối mi</option><option>Dịch vụ khác / Cần tư vấn thêm</option></select></div>
-            <div><label for="note" class="mb-1 block text-xs font-semibold text-gray-700">Ghi chú / Ngày muốn đặt lịch</label><textarea id="note" name="note" rows="3" placeholder="Ví dụ: Lịch hẹn 14h chiều thứ 7..." class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm focus:border-brand focus:outline-none"></textarea></div>
-            <button type="submit" class="w-full rounded-xl bg-brand py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg transition hover:bg-brand-dark">Gửi yêu cầu đặt lịch</button>
-            <p id="form-message" class="hidden text-center text-sm font-medium text-green-600" role="status"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="bg-gray-900 py-12 text-white">
-    <div class="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-3">
-      <div class="space-y-3"><h3 class="text-xl font-bold text-brand">TRANG NHÍM BEAUTY & SPA</h3><p class="text-xs leading-relaxed text-gray-400">Chuyên Filler, Botox, Cắt/Nhấn mí, Nâng cung mày, Nail & Mi. Uy tín – Chất lượng – Đặt sự hài lòng của khách hàng lên hàng đầu.</p></div>
-      <div class="space-y-2"><h4 class="mb-3 text-sm font-semibold">Thông tin liên hệ</h4><p class="flex items-center text-xs text-gray-400"><i class="fa-solid fa-location-dot mr-2.5 w-4 text-center text-brand" aria-hidden="true"></i>Địa chỉ: TP. Vĩnh Yên, Vĩnh Phúc</p><p class="flex items-center text-xs text-gray-400"><i class="fa-solid fa-phone mr-2.5 w-4 text-center text-brand" aria-hidden="true"></i>Hotline: 0363 329 333</p><p class="flex items-center text-xs text-gray-400"><i class="fa-solid fa-clock mr-2.5 w-4 text-center text-brand" aria-hidden="true"></i>Giờ làm việc: 8:30 - 20:00 mỗi ngày</p></div>
-      <div class="space-y-2"><h4 class="text-sm font-semibold">Kết nối với chúng tôi</h4><div class="mt-2 flex space-x-3 text-lg"><a href="https://www.facebook.com/profile.php?id=61552750869834" target="_blank" rel="noopener noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-800 transition hover:bg-brand" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a><a href="https://m.me/61552750869834" target="_blank" rel="noopener noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-800 transition hover:bg-brand" aria-label="Messenger"><i class="fa-brands fa-facebook-messenger" aria-hidden="true"></i></a><a href="https://zalo.me/0363329333" target="_blank" rel="noopener noreferrer" class="flex h-9 w-9 items-center justify-center rounded-full bg-gray-800 transition hover:bg-brand" aria-label="Zalo"><i class="fa-solid fa-comment" aria-hidden="true"></i></a></div></div>
     </div>
-    <div class="mx-auto mt-8 max-w-7xl border-t border-gray-800 px-4 pt-6 text-center text-xs text-gray-500">© Trang Nhím Beauty & Spa. All rights reserved.</div>
-  </footer>
+  </section>
 
-  <div class="fixed bottom-4 right-4 z-50 flex flex-col space-y-3">
-    <a href="https://m.me/61552750869834" target="_blank" rel="noopener noreferrer" aria-label="Nhắn Messenger" class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg transition hover:scale-110"><i class="fa-brands fa-facebook-messenger text-xl" aria-hidden="true"></i></a>
-    <a href="https://zalo.me/0363329333" target="_blank" rel="noopener noreferrer" aria-label="Nhắn Zalo" class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500 text-white shadow-lg transition hover:scale-110"><i class="fa-solid fa-comment text-xl" aria-hidden="true"></i></a>
-    <a href="tel:0363329333" aria-label="Gọi 0363 329 333" class="flex h-12 w-12 animate-bounce items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition hover:scale-110"><i class="fa-solid fa-phone text-xl" aria-hidden="true"></i></a>
+  <!-- MARQUEE -->
+  <div class="overflow-hidden bg-plum py-4 text-gold" aria-hidden="true">
+    <div class="marquee font-serif text-lg italic">
+      <span class="flex shrink-0 items-center gap-10 pr-10"><span>Filler</span><svg class="ic text-xs" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Botox</span><svg class="ic text-xs" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Cắt & Nhấn mí</span><svg class="ic text-xs" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Nâng cung mày</span><svg class="ic text-xs" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Nail</span><svg class="ic text-xs" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Nối mi</span><svg class="ic text-xs" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
+      <span class="flex shrink-0 items-center gap-10 pr-10"><span>Filler</span><svg class="ic text-xs" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Botox</span><svg class="ic text-xs" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Cắt & Nhấn mí</span><svg class="ic text-xs" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Nâng cung mày</span><svg class="ic text-xs" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Nail</span><svg class="ic text-xs" aria-hidden="true"><use href="#i-sparkle"/></svg><span>Nối mi</span><svg class="ic text-xs" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
+    </div>
   </div>
 
-  <script>
-    document.getElementById('booking-form').addEventListener('submit', function (event) {
-      event.preventDefault();
+  <!-- ABOUT -->
+  <section id="about" class="py-24">
+    <div class="mx-auto max-w-7xl px-5">
+      <div class="reveal mx-auto mb-14 max-w-2xl text-center">
+        <h2 class="font-serif text-3xl font-semibold md:text-4xl">Vì sao khách hàng chọn Trang Nhím</h2>
+        <p class="mt-4 text-sm leading-relaxed text-plum/60">Chúng tôi đặt chất lượng dịch vụ và sự hài lòng của bạn lên hàng đầu.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="reveal group rounded-[2rem] border border-blush bg-white p-8 text-center transition hover:-translate-y-2 hover:shadow-xl">
+          <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-blush text-2xl text-roseD transition group-hover:bg-plum group-hover:text-gold"><svg class="ic " aria-hidden="true"><use href="#i-shield-halved"/></svg></div>
+          <h3 class="font-serif text-xl font-semibold">An toàn tuyệt đối</h3>
+          <p class="mt-3 text-sm leading-relaxed text-plum/60">Filler và Botox đạt chuẩn, rõ nguồn gốc xuất xứ, đảm bảo an toàn y tế.</p>
+        </article>
+        <article class="reveal group rounded-[2rem] border border-blush bg-white p-8 text-center transition hover:-translate-y-2 hover:shadow-xl" style="transition-delay:.12s">
+          <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-blush text-2xl text-roseD transition group-hover:bg-plum group-hover:text-gold"><svg class="ic " aria-hidden="true"><use href="#i-wand-magic-sparkles"/></svg></div>
+          <h3 class="font-serif text-xl font-semibold">Tay nghề cao</h3>
+          <p class="mt-3 text-sm leading-relaxed text-plum/60">Tạo hình chuẩn tỉ lệ vàng, thao tác nhẹ nhàng, hạn chế tối đa sưng đau.</p>
+        </article>
+        <article class="reveal group rounded-[2rem] border border-blush bg-white p-8 text-center transition hover:-translate-y-2 hover:shadow-xl" style="transition-delay:.24s">
+          <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-blush text-2xl text-roseD transition group-hover:bg-plum group-hover:text-gold"><svg class="ic " aria-hidden="true"><use href="#i-heart"/></svg></div>
+          <h3 class="font-serif text-xl font-semibold">Tận tâm chăm sóc</h3>
+          <p class="mt-3 text-sm leading-relaxed text-plum/60">Theo sát quá trình lành thương, tư vấn và bảo hành chu đáo sau dịch vụ.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      var name = document.getElementById('name').value.trim();
-      var phone = document.getElementById('phone').value.trim();
-      var service = document.getElementById('service').value;
-      var note = document.getElementById('note').value.trim();
+  <!-- SERVICES -->
+  <section id="services" class="bg-blush/60 py-24">
+    <div class="mx-auto max-w-7xl px-5">
+      <div class="reveal mx-auto mb-14 max-w-2xl text-center">
+        <h2 class="font-serif text-3xl font-semibold md:text-4xl">Dịch vụ nổi bật</h2>
+        <p class="mt-4 text-sm text-plum/60">Giải pháp làm đẹp toàn diện, thiết kế riêng cho từng gương mặt.</p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <a href="#booking" class="card reveal group relative block h-[440px] overflow-hidden rounded-[2rem] bg-plum">
+          <img referrerpolicy="no-referrer" decoding="async" src="https://w.ladicdn.com/690240aadfda14002c5c3a19/729939951_122234232242091695_741693309196468735_n-20260725030323--bwnl.jpg" alt="Dịch vụ Filler và Botox" class="h-full w-full object-cover object-top">
+          <div class="veil absolute inset-0"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 text-white"><h3 class="font-serif text-2xl">Filler & Botox</h3><p class="mt-2 text-xs leading-relaxed text-white/80">Môi baby, cằm V-line, làm đầy thái dương, xóa nhăn đuôi mắt, thon gọn hàm.</p><span class="mt-4 inline-flex items-center gap-2 text-xs font-medium text-gold">Đặt lịch tư vấn <svg class="ic transition group-hover:translate-x-1" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></div>
+        </a>
+        <a href="#booking" class="card reveal group relative block h-[440px] overflow-hidden rounded-[2rem] bg-plum" style="transition-delay:.1s">
+          <img referrerpolicy="no-referrer" decoding="async" src="https://w.ladicdn.com/690240aadfda14002c5c3a19/627328357_3471348303006893_8683797260080931585_n-20260724120707-ucwdy.jpg" alt="Dịch vụ cắt và nhấn mí" class="h-full w-full object-cover object-top">
+          <div class="veil absolute inset-0"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 text-white"><h3 class="font-serif text-2xl">Cắt & Nhấn mí</h3><p class="mt-2 text-xs leading-relaxed text-white/80">Nếp mí rõ nét, tự nhiên; khắc phục mí lót và mắt một mí nhanh, an toàn.</p><span class="mt-4 inline-flex items-center gap-2 text-xs font-medium text-gold">Đặt lịch tư vấn <svg class="ic transition group-hover:translate-x-1" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></div>
+        </a>
+        <a href="#booking" class="card reveal group relative block h-[440px] overflow-hidden rounded-[2rem] bg-plum" style="transition-delay:.2s">
+          <img referrerpolicy="no-referrer" decoding="async" src="https://w.ladicdn.com/690240aadfda14002c5c3a19/627367472_3471348363006887_6465955051056027859_n-20260724120439-woame.jpg" alt="Dịch vụ nâng cung mày" class="h-full w-full object-cover object-top">
+          <div class="veil absolute inset-0"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 text-white"><h3 class="font-serif text-2xl">Nâng cung mày</h3><p class="mt-2 text-xs leading-relaxed text-white/80">Xóa xệ vùng mắt, nâng cơ chân mày giúp đôi mắt trẻ trung, rạng rỡ.</p><span class="mt-4 inline-flex items-center gap-2 text-xs font-medium text-gold">Đặt lịch tư vấn <svg class="ic transition group-hover:translate-x-1" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></div>
+        </a>
+        <a href="#booking" class="card reveal group relative block h-[440px] overflow-hidden rounded-[2rem] bg-plum" style="transition-delay:.3s">
+          <img referrerpolicy="no-referrer" decoding="async" src="https://w.ladicdn.com/690240aadfda14002c5c3a19/nail-mong-ngan-cuc-sang-20260725030010-y4kpu.jpg" alt="Dịch vụ nail và nối mi" class="h-full w-full object-cover object-top">
+          <div class="veil absolute inset-0"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 text-white"><h3 class="font-serif text-2xl">Nail & Nối mi</h3><p class="mt-2 text-xs leading-relaxed text-white/80">Chăm sóc móng chuyên nghiệp, nối mi mềm nhẹ, chuẩn dáng mắt.</p><span class="mt-4 inline-flex items-center gap-2 text-xs font-medium text-gold">Đặt lịch tư vấn <svg class="ic transition group-hover:translate-x-1" aria-hidden="true"><use href="#i-arrow-right"/></svg></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-      var bookingText =
-        'ĐĂNG KÝ ĐẶT LỊCH - TRANG NHÍM BEAUTY & SPA\n\n' +
-        'Họ và tên: ' + name + '\n' +
-        'Số điện thoại/Zalo: ' + phone + '\n' +
-        'Dịch vụ quan tâm: ' + service + '\n' +
-        'Ghi chú/Ngày muốn đặt lịch: ' + (note || 'Không có');
+  <!-- PROCESS -->
+  <section id="process" class="py-24">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="reveal mx-auto mb-14 max-w-2xl text-center">
+        <h2 class="font-serif text-3xl font-semibold md:text-4xl">Quy trình thực hiện</h2>
+        <p class="mt-4 text-sm text-plum/60">Bốn bước rõ ràng, để bạn yên tâm từ lúc đặt lịch đến khi hồi phục.</p>
+      </div>
+      <ol class="relative grid gap-10 md:grid-cols-4">
+        <div class="absolute left-0 right-0 top-8 hidden h-px bg-gradient-to-r from-transparent via-gold to-transparent md:block"></div>
+        <li class="reveal relative text-center"><span class="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-plum font-serif text-xl text-gold ring-8 ring-ivory">1</span><h3 class="font-serif text-lg font-semibold">Tư vấn</h3><p class="mt-2 text-sm text-plum/60">Lắng nghe mong muốn và phân tích gương mặt.</p></li>
+        <li class="reveal relative text-center" style="transition-delay:.12s"><span class="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-plum font-serif text-xl text-gold ring-8 ring-ivory">2</span><h3 class="font-serif text-lg font-semibold">Thiết kế</h3><p class="mt-2 text-sm text-plum/60">Chọn phương án hài hòa, đúng tỉ lệ.</p></li>
+        <li class="reveal relative text-center" style="transition-delay:.24s"><span class="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-plum font-serif text-xl text-gold ring-8 ring-ivory">3</span><h3 class="font-serif text-lg font-semibold">Thực hiện</h3><p class="mt-2 text-sm text-plum/60">Thao tác nhẹ nhàng, sản phẩm rõ nguồn gốc.</p></li>
+        <li class="reveal relative text-center" style="transition-delay:.36s"><span class="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-plum font-serif text-xl text-gold ring-8 ring-ivory">4</span><h3 class="font-serif text-lg font-semibold">Chăm sóc sau</h3><p class="mt-2 text-sm text-plum/60">Theo dõi lành thương và hỗ trợ bảo hành.</p></li>
+      </ol>
+    </div>
+  </section>
 
-      function fallbackCopy(text) {
-        var textarea = document.createElement('textarea');
-        textarea.value = text;
-        textarea.setAttribute('readonly', '');
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
+  <!-- BOOKING -->
+  <section id="booking" class="relative overflow-hidden bg-plum py-24">
+    <div class="blob -right-20 top-0 h-80 w-80 bg-rose/40"></div>
+    <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-2">
+      <div class="reveal text-center text-white md:text-left">
+        <h2 class="font-serif text-3xl font-semibold md:text-5xl">Đặt lịch<br><span class="italic text-gold">tư vấn riêng cho bạn</span></h2>
+        <p class="mx-auto mt-5 max-w-md text-sm leading-relaxed text-white/70 md:mx-0">Để lại thông tin, chuyên viên Trang Nhím sẽ tư vấn trực tiếp và sắp xếp lịch phù hợp.</p>
+        <p class="mt-8 flex items-center justify-center gap-3 text-sm text-white/80 md:justify-start"><svg class="ic text-gold" aria-hidden="true"><use href="#i-clock"/></svg>Mở cửa 8:30 – 20:00 mỗi ngày</p>
+      </div>
+      <div class="reveal rounded-[2rem] bg-ivory p-7 shadow-2xl md:p-10">
+        <form id="booking-form" class="space-y-5">
+          <div><label for="name" class="text-xs font-medium text-plum/70">Họ và tên *</label><input id="name" name="name" type="text" required placeholder="Nguyễn Thị A" class="field"></div>
+          <div><label for="phone" class="text-xs font-medium text-plum/70">Số điện thoại / Zalo *</label><input id="phone" name="phone" type="tel" required placeholder="0363 329 333" class="field"></div>
+          <div><label for="service" class="text-xs font-medium text-plum/70">Dịch vụ quan tâm</label><select id="service" name="service" class="field"><option>Tiêm Filler / Botox</option><option>Cắt mí / Nhấn mí</option><option>Nâng cung mày</option><option>Làm Nail / Nối mi</option><option>Dịch vụ khác / Cần tư vấn thêm</option></select></div>
+          <div><label for="note" class="text-xs font-medium text-plum/70">Ghi chú / Ngày muốn đặt lịch</label><textarea id="note" name="note" rows="2" placeholder="Ví dụ: 14h chiều thứ 7" class="field"></textarea></div>
+          <button type="submit" class="btn w-full rounded-full bg-plum py-4 text-sm font-medium text-white shadow-lg transition hover:bg-roseD">Gửi yêu cầu đặt lịch</button>
+          <p id="form-message" class="hidden rounded-xl bg-blush p-3 text-center text-sm text-roseD" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
 
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(bookingText).catch(function () {
-          fallbackCopy(bookingText);
-        });
-      } else {
-        fallbackCopy(bookingText);
-      }
+<footer class="bg-[#2a1520] py-14 text-white">
+  <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-3">
+    <div><svg class="mb-4 h-16 w-16" viewBox="0 0 64 64" aria-hidden="true"><use href="#logo"/></svg><h3 class="font-serif text-2xl text-gold">Trang Nhím Beauty & Spa</h3><p class="mt-3 text-sm leading-relaxed text-white/60">Filler, Botox, cắt/nhấn mí, nâng cung mày, nail và nối mi. Uy tín, chất lượng, đặt sự hài lòng của khách hàng lên hàng đầu.</p></div>
+    <div class="space-y-3 text-sm text-white/70"><h4 class="font-medium text-white">Liên hệ</h4><p><svg class="ic mr-3 w-4 text-gold" aria-hidden="true"><use href="#i-location-dot"/></svg>TP. Vĩnh Yên, Vĩnh Phúc</p><p><svg class="ic mr-3 w-4 text-gold" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:0363329333">0363 329 333</a></p><p><svg class="ic mr-3 w-4 text-gold" aria-hidden="true"><use href="#i-clock"/></svg>8:30 – 20:00 mỗi ngày</p></div>
+    <div><h4 class="text-sm font-medium">Kết nối với chúng tôi</h4><div class="mt-4 flex gap-3">
+      <a href="https://www.facebook.com/profile.php?id=61552750869834" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-rose"><svg class="ic " aria-hidden="true"><use href="#i-facebook-f"/></svg></a>
+      <a href="https://m.me/61552750869834" target="_blank" rel="noopener noreferrer" aria-label="Messenger" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-rose"><svg class="ic " aria-hidden="true"><use href="#i-facebook-messenger"/></svg></a>
+      <a href="https://zalo.me/0363329333" target="_blank" rel="noopener noreferrer" aria-label="Zalo" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:-translate-y-1 hover:bg-rose"><svg class="ic " aria-hidden="true"><use href="#i-comment"/></svg></a></div></div>
+  </div>
+  <div class="mx-auto mt-10 max-w-7xl border-t border-white/10 px-5 pt-6 text-center text-xs text-white/40">© Trang Nhím Beauty & Spa. All rights reserved.</div>
+</footer>
 
-      var message = document.getElementById('form-message');
-      message.textContent = 'Thông tin đã được sao chép. Messenger đang mở, bạn chỉ cần dán nội dung và gửi.';
-      message.classList.remove('hidden');
+<div class="fixed bottom-5 right-4 z-50 flex flex-col gap-3">
+  <a href="https://m.me/61552750869834" target="_blank" rel="noopener noreferrer" aria-label="Nhắn Messenger" class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg transition hover:scale-110"><svg class="ic text-xl" aria-hidden="true"><use href="#i-facebook-messenger"/></svg></a>
+  <a href="https://zalo.me/0363329333" target="_blank" rel="noopener noreferrer" aria-label="Nhắn Zalo" class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500 text-white shadow-lg transition hover:scale-110"><svg class="ic text-xl" aria-hidden="true"><use href="#i-comment"/></svg></a>
+  <a href="tel:0363329333" aria-label="Gọi 0363 329 333" class="relative flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition hover:scale-110"><span class="absolute inset-0 animate-ping rounded-full bg-green-400 opacity-40"></span><svg class="ic relative text-xl" aria-hidden="true"><use href="#i-phone"/></svg></a>
+</div>
 
-      window.open('https://m.me/61552750869834', '_blank', 'noopener,noreferrer');
+<script>
+(function(){
+  document.querySelectorAll('img[src*="ladicdn"]').forEach(function(im){
+    var orig=im.getAttribute('src'),tried=false;
+    im.addEventListener('error',function(){
+      if(tried){im.style.visibility='hidden';return;}tried=true;
+      im.src='https://images.weserv.nl/?url='+encodeURIComponent(orig.replace(/^https?:\/\//,''));
     });
-  </script>
-<!-- cập nhật GitHub Pages -->
+    if(im.complete&&im.naturalWidth===0)im.dispatchEvent(new Event('error'));
+  });
+  var hdr=document.getElementById('hdr');
+  var heroImg=document.getElementById('heroImg');
+  function onScroll(){
+    hdr.classList.toggle('scrolled',window.scrollY>30);
+    if(heroImg&&window.scrollY<900)heroImg.style.transform='scale(1.1) translateY('+(window.scrollY*0.06)+'px)';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var btn=document.getElementById('menuBtn'),nav=document.getElementById('mobileNav');
+  btn.addEventListener('click',function(){var open=nav.classList.toggle('hidden')===false;btn.setAttribute('aria-expanded',open);});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.add('hidden');btn.setAttribute('aria-expanded','false');});});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    document.querySelectorAll('.card').forEach(function(c){
+      c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(900px) rotateY('+(x*8)+'deg) rotateX('+(-y*8)+'deg) translateY(-6px)';});
+      c.addEventListener('mouseleave',function(){c.style.transform='';});
+    });
+    var marks=['✦','✧','❀'];
+    setInterval(function(){
+      if(document.hidden)return;
+      var s=document.createElement('span');s.className='sparkle';s.textContent=marks[Math.floor(Math.random()*marks.length)];
+      s.style.left=Math.random()*100+'vw';s.style.fontSize=(10+Math.random()*12)+'px';s.style.animationDuration=(9+Math.random()*7)+'s';s.style.opacity=.4+Math.random()*.4;
+      document.body.appendChild(s);setTimeout(function(){s.remove();},17000);
+    },1800);
+  }
+
+  document.getElementById('booking-form').addEventListener('submit',function(event){
+    event.preventDefault();
+    var name=document.getElementById('name').value.trim();
+    var phone=document.getElementById('phone').value.trim();
+    var service=document.getElementById('service').value;
+    var note=document.getElementById('note').value.trim();
+    var bookingText='ĐĂNG KÝ ĐẶT LỊCH - TRANG NHÍM BEAUTY & SPA\n\nHọ và tên: '+name+'\nSố điện thoại/Zalo: '+phone+'\nDịch vụ quan tâm: '+service+'\nGhi chú/Ngày muốn đặt lịch: '+(note||'Không có');
+    function fallbackCopy(text){
+      var t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');t.style.position='fixed';t.style.opacity='0';
+      document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);
+    }
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(bookingText).catch(function(){fallbackCopy(bookingText);});}
+    else{fallbackCopy(bookingText);}
+    var m=document.getElementById('form-message');
+    m.textContent='Thông tin đã được sao chép. Messenger đang mở, bạn chỉ cần dán nội dung và gửi.';
+    m.classList.remove('hidden');
+    window.open('https://m.me/61552750869834','_blank','noopener,noreferrer');
+  });
+})();
+</script>
 </body>
 </html>
